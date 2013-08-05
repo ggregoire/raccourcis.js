@@ -1,0 +1,58 @@
+﻿<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css">
+	<style>td { padding-right: 10px }</style>
+</head>
+<body>
+	<div id="raccourcis1"></div>
+	<div>---------------------------------------------------------------------------</div>
+	<div id="raccourcis2"></div>
+	<div>---------------------------------------------------------------------------</div>
+	<a data-toggle="modal" href="#myModal">Keyboard shortcuts into a popup (twitter-like)</a>
+	<div class="modal fade" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Keyboard shortcuts</h4>
+				</div>
+				<div class="modal-body">
+					<div id="raccourcis-modal"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script>
+	<script src="raccourcis.min.js"></script>
+	<script>
+		var shortcuts = [
+			{ section: "Single keys", shortcuts: [
+				{ keys: "F", action: "Favoris" }
+			]},
+			{ section: "Combinations", shortcuts: [
+				{ keys: "ctrl+A", action: "Accueil" }
+			]},
+			{ section: "Symbols", shortcuts: [
+				{ keys: "command shift S", action: "Search" }
+			]},
+			{ section: "Multiple shortcuts", shortcuts: [
+				{ keys: "space, up", action: "Jump" }
+			]},
+			{ section: "Konami code", shortcuts: [
+				{ keys: "up up down down left right left right B A enter", action: "The dance of the Unicorn" }
+			]}
+		];
+
+		var options1 = { css: 'border: 1px dotted #2c77ba; padding: 1px 5px; margin: 3px; background: #fca344' };
+		var options2 = { css: null };
+		var options3 = { symbols: true };
+		var options4 = { actionFirst: true };
+
+		$('#raccourcis1, #raccourcis-modal').raccourcis(shortcuts, options3);
+		$('#raccourcis2').raccourcis(shortcuts, options4);
+	</script>
+</body>
+</html>
