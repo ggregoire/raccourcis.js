@@ -1,6 +1,8 @@
 raccourcis.js
 =============
 
+![raccourcis.js](https://raw.github.com/ggregoire/raccourcis.js/master/raccourcis.png)
+
 Simple library for showing your keyboard shortcuts.
 
 Requirements: jQuery 1.6+
